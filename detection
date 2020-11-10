@@ -1,0 +1,8 @@
+!/bin/bash
+fswebcam -D 1 -S 20 --set brightness=30% --set contrast=0%  -F 10 -r  1920x1080 --no-banner /home/pi/coral/tflite/python/examples/detection/images/scenario.jpg
+python3 /home/pi/coral/tflite/python/examples/detection/object_detection.py \
+--model /home/pi/coral/tflite/python/examples/detection/models/ssd_mobilenet_v2_coco_quant_postprocess_edgetpu.tflite \
+--label /home/pi/coral/tflite/python/examples/detection/models/coco_labels.txt \
+--input /home/pi/coral/tflite/python/examples/detection/images/scenario.jpg \
+--output /home/pi/coral/tflite/python/examples/detection/images/detection_results.jpg
+
